@@ -69,7 +69,7 @@ div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.co
   font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
 }
 div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre {
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 div.prompt, div.tooltiptext pre {
