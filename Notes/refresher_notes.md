@@ -63,9 +63,7 @@
 
 ### Trees
 
-- Binary Tree
-- Binary Search Tree
-- N-ary Tree
+- Binary Tree / Binary Search Tree
 - Traversals
   - [ ] BFS - aka level order - using queue
   - [ ] DFS - implement using 1) iterative 2) recursion
@@ -75,7 +73,10 @@
   - [ ] Post-order (left-right-root)
 - Advanced trees
   - [ ] AVL
+  - [ ] Splay trees
   - [ ] Red Black
+  - [ ] B+ Trees
+  - [ ] N-ary tree
 - Operations
   - [ ] Get height
   - [ ] Get min, max
