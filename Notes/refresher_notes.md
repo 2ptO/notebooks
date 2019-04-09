@@ -67,10 +67,10 @@
 - Traversals
   - [ ] BFS - aka level order - using queue
   - [ ] DFS - implement using 1) iterative 2) recursion
-  - [ ] Pre-order (root-left-right)
-  - [ ] In-order (left-root-right)
+  - [ ] Pre-order (root-left-right) - applications: tree copy, duplications, prefix notations
+  - [ ] In-order (left-root-right) - applications: binary search trees
     - [ ] Morris inorder iteration
-  - [ ] Post-order (left-right-root)
+  - [ ] Post-order (left-right-root) - applications: node deletions, polish notations
 - Advanced trees
   - [ ] AVL
   - [ ] Splay trees
