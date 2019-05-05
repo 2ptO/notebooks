@@ -50,14 +50,26 @@
 ### Array/Vectors
 
 - Maximum sub array equaling a given sum (*Kadane's Algorithm*)
+- Finding the duplicate number
+- Two Sum / Three Sum
 - Tools
-  - Two pointers
+  - Two pointers - many applications: binary search, two sum problem on sorted nums, finding cycle
   - [1...n], Given an array of length n, with values in range 1..n. Use value as index
 
 ### String
 
 - [ ] Suffix arrays
 - Substring search algorithms
+  - Substrings can be generated two ways..chose the one depending on the problem in hand. Often the second method is preferable, because it solves the smaller substrings first. We can solve subproblems first to apply that to larger problems.
+  - For a string of length `n`, there can be `n*(n+1)/2` different substrings
+  - Both run in O(n^2)
+  ```python
+  def gen_substrings(s):
+    return {s[i:j+1] for i in range(len(s)) for j in range(i, len(s))}
+  
+  def gen_substrings2(s):
+    return {s[j:i+1] for i in range(len(s) for j in range(i+1))}
+  ```
 - [ ] Brute force
 - [ ] Knuth Morris Pratt
 - [ ] Boyer-Moore
@@ -65,20 +77,36 @@
 
 ### Linked lists
 
-- [ ] All common operations (insertion, deletion, recursion, traversal)
-- [ ] Finding cycles
-- [ ] Finding duplicates (Floyd's Tortoise/Hare algorithm)
+- [x] All common operations (insertion, deletion, recursion, traversal)
+- [x] Finding cycles
+  - Use two pointer method. Start both from head. Advance slow pointer by 1 and fast by 2. slow and fast will meet at a point if there exists a cycle.
+  ```python
+  def has_cycle(head):
+    slow = fast = head
+    while slow and fast and fast.next:
+      slow = slow.next
+      fast = fast.next.next
+      if fast == slow:
+        return True
+    return False
+  ```
+- [x] Finding duplicates/intersection (Floyd's Tortoise/Hare algorithm)
+  - Can use simple node wise comparison or hash table based conversion
+  - Find the meeting point using cycle detection logic. Then find the intersection using Floyd's algorithm.
 
 ### Trees
 
 - Binary Tree / Binary Search Tree
 - Traversals
-  - [ ] BFS - aka level order - using queue
+  - [x] BFS - aka level order - using queue
   - [ ] DFS - implement using 1) iterative 2) recursion
-  - [ ] Pre-order (root-left-right) - applications: tree copy, duplications, prefix notations
-  - [ ] In-order (left-root-right) - applications: binary search trees
+  - [x] Pre-order (root-left-right) - applications: tree copy, duplications, prefix notations
+    - [x] Iteration: add node to stack, pop from stack, push right followed by left
+  - [x] In-order (left-root-right) - applications: binary search trees
+    - [x] Normal iteration - go all the way left, at the dead end pop from stack, visit the node and continue on right
     - [ ] Morris inorder iteration
   - [ ] Post-order (left-right-root) - applications: node deletions, polish notations
+    - [x] Iteration: left-right-node: go all the way left. peek the stack. if top of the stack has right, visit right first if it is not the last node visited.
 - Advanced trees (know the basics at least)
   - [ ] AVL
   - [ ] Splay trees
@@ -86,9 +114,9 @@
   - [ ] B+ Trees
   - [ ] N-ary tree
 - Operations
-  - [ ] Get height
-  - [ ] Get min, max
-  - [ ] Is valid BST?
+  - [x] Get height
+  - [x] Get min, max
+  - [x] Is valid BST?
   - [ ] In-order successor
   - [ ] Delete node
 
